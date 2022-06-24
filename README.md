@@ -4,4 +4,4 @@ this is a very basic CLI blog to add and view posts
 --
 
 ># Sample run
-![sample run](https://lh4.googleusercontent.com/sWFqTXhHmEKtrmkLN03Ownb9dcTAQjJe5JHo6Q13eE8Yggfq5M-UZ2l8VLCRiVhA7n3eOPv4ydQs59rWF-d0=w958-h927)
+![sample run](https://lh4.googleusercontent.com/IqwwDao5s1PBa7nBOnjo6N3aKAyoXkrispBBVu2X_0gfGgDkjM3mevfWdad29qagYTsli8OKQQxOYoMac0fE=w1920-h937)
