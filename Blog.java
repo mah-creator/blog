@@ -10,6 +10,9 @@ public class Blog{
 	public Blog() throws Exception{this("MY BLOG");}
 	public Blog(String blogName) throws Exception{this.blogName = blogName; startUp();}
 
+	/*
+	 * prints saved posts to the user
+	 */
 	public void listPosts() throws Exception{
 		System.out.println("----------");
 
@@ -30,7 +33,8 @@ public class Blog{
 		System.out.println("----------");
 	}
 
-	public void viewPosts() throws Exception{
+	
+	public void viewPost() throws Exception{
 		listPosts();
 
 		if(postsList.size() > 0){
@@ -38,6 +42,7 @@ public class Blog{
 
 			String title = postsList.get(chosenPost).getTitle();
 			String content = postsList.get(chosenPost).getContent();
+
 			String seperator = seperation(title, '-');
 			String sep = seperation(title, '*');
 
@@ -70,6 +75,11 @@ public class Blog{
 
 	// Support methodes
 
+	/*
+	 * starts the blog by 
+	 * defining the folder where posts are saved
+	 * encapsulates each post file in a post object
+	 */
 	public void startUp(){
 		try{
 			File postsDirectory = new File(".\\data");
@@ -89,6 +99,11 @@ public class Blog{
 			System.out.print("");
 		}
 	}
+
+	/*
+	 * some methos to prompt user for input
+	 */
+
 
 	public int promptUserToAct(){
 		return promptUserToChoose("Please select an action : \n0. List Posts\n1. View a Post\n2. Add a Post\n3. Exit\n<< Enter a choice : ");
@@ -134,6 +149,19 @@ public class Blog{
 		return userInput;
 	}
 
+	/*
+	 * saves a post to a file
+	 * encoded as follows
+	 * 
+	 * ******************
+	 * **** post.txt ****
+	 * ******************
+	 * *   post title   *
+	 * *  post content  * 
+	 * ******************
+	 * **** END file ****
+	 * ******************
+	 */
 	private void writePostToFile(File postLocation, String title, String content){
 		try{
 			FileWriter fileWriter = new FileWriter(postLocation);
@@ -148,6 +176,9 @@ public class Blog{
 		}
 	}
 
+	/*
+	 * a method returns a string of the one character of a givin length 
+	 */
 	private String seperation(String specialTitle, char seperationChar){
 		String seperator = "";
 		for(int i=0; i < specialTitle.length(); i++){seperator += seperationChar;}
